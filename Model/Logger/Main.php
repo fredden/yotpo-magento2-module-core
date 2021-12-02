@@ -49,11 +49,7 @@ class Main extends \Monolog\Logger
     public function info($message, array $context = []): bool
     {
         $message = self::LOG_PREFIX . $message;
-        if ($this->isDebugEnabled()) {
-            $this->logSystemInfo();
-            return parent::info($message, $context);
-        }
-        return true;
+        return parent::info($message, $context);
     }
 
     /**
